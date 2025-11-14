@@ -1,175 +1,96 @@
 :root {
-    --blue: #7aa2f7;
-    --red: #f7768e;
-    --dark: #1e1e2e;
-    --black: #11111b;
+    --pink: #f5c2e7;
+    --mauve: #cba6f7;
+    --red: #f38ba8;
+    --orange: #fab387;
     --yellow: #f9e2af;
-    --green: #a6e3a1;
+    --blue: #89b4fa;
     --lavender: #b4befe;
     --white: #cdd6f4;
-    --orange: #fab387;
-    --shadow: #1e1e2eb3;
+    --dark: #6c7086;
+    --black: #11111b;
+    --green: #a6e3a1;
 }
 
-@font-face {font-family: S; src: url('Sauce Code Pro Nerd Font Complete.ttf');}
+@font-face {font-family: S; src: url('assets/Sauce Code Pro Nerd Font Complete.ttf');}
 
 body {
     background: var(--black);
+    color: var(--white);
+    margin: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.main {
-    background: var(--black);
-    width: calc(100% - 200px);
-    height: calc(100% - 200px);
-    border: 4px solid var(--white);
-    border-radius: 20px;
-    box-shadow: var(--blue) 0px 0px 20px 10px;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-bottom: 100px;
-    margin-top: 100px;
     overflow: hidden;
-    color: var(--blue);
-    text-shadow: 
-        1px 1px 2px var(--black),
-        0px 0px 5px var(--white),
-        0px 0px 1px var(--white);
     font-family: S;
+    font-size: 14;
     font-weight: bold;
-    font-size: 14px;
 }
 
-.input-form {
-    width: calc(100% - 10px);
-    margin-left: 10px;
+#main {
+    width: 650px;
+    height: calc(100vh - 80px);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border: 4px solid var(--lavender);
+    box-shadow: var(--dark) 6px 6px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+#buttons_bar {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    margin: 8px;
+    margin-bottom: 0px;
 }
 
-.input {
-    background: var(--black);
-    color: var(--blue);
+.btn_unsel {
+    border: 0px solid #000000;
+    background: var(--yellow);
+    foreground: var(--blak);
     font-family: S;
     font-weight: bold;
     font-size: 14px;
-    text-shadow: 
-        1px 1px 2px var(--black),
-        0px 0px 5px var(--white),
-        0px 0px 1px var(--white);
-    border: 0px;
-    caret-shape: block;
+    flex: 1;
+    height: 30px;
 }
 
-/* width */
-::-webkit-scrollbar {
-    width: 4px;
-    left: -10px;
+.btn_sel {
+    border: 0px solid #000000;
+    background: var(--red);
+    foreground: var(--black);
+    font-family: S;
+    font-weight: bold;
+    font-size: 14px;
+    flex: 1;
+    height: 30px%;
 }
 
-::-webkit-scrollbar:horizontal {
-    height: 1px;
+#page {
+    width: calc(100% - 24px);
+    height: 100%;
+    margin: 8px;
+    border: 4px solid var(--yellow);
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: var(--black);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: var(--blue);
-    border-radius: 20px;
-    box-shadow: 0 0 4px 4px var(--blue);
-}
-
-textarea:focus, input:focus{
-    outline: none;
-}
-
-.inner {
-    overflow-y: auto;
+.page_content {
     width: 100%;
     height: 100%;
+
 }
 
-.output {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    overflow-wrap: break-word;
-}
-
-.prompt {
-    margin-right: 10px;
-}
-
-.ascii {
-    margin-top: -5px;
-}
-
-.hsplit {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    margin-top: 10px;
-}
-
-.image-medium {
-    width: 400px;
-    border-radius: 20px;
-    box-shadow: var(--blue) 0px 0px 10px 5px;
+.banner {
+    width: calc(100% - 40px);
     margin: 20px;
-    z-index: -1;
+    margin-bottom: 0px;
 }
 
 p {
-    border-bottom: 2px dashed var(--blue);
-    margin: 0px;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-}
-
-.content {
-    width: 100%;
-    margin: 0px;
-}
-
-.pixelart {
-    border: 4px solid var(--blue);
-}
-
-.pixelartcodebox {
-    border: 4px solid var(--blue);
-    border-left: 0px;
-    background: var(--black);
-    color: var(--blue);
-    font-weight: bold;
-    resize: none;
-}
-
-.box {
-    border: 4px solid var(--blue);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.box img {
-    height: 240px;
-    width: 170px;
-    margin: 10px;
-}
-
-.boxsplit {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    margin-top: 10px;
-    overflow-x: scroll;
+    margin: 20px;
+    margin-top: -20ps;
+    width: calc(100% - 60px);
+    height: calc(100% - 480px);
+    padding: 10px;
 }

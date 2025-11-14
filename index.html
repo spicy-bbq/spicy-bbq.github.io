@@ -1,20 +1,19 @@
 <html>
     <head>
-		<link rel = "stylesheet" type = "text/css" href = "index.css">
-        <title>Shitten</title>
+        <title>Idiot</title>
+		<link rel = 'stylesheet' type = 'text/css' href = 'index.css'>
     </head>
     <body>
-        <div class = 'main'>
-            <div class = 'inner'>
-                <div class = 'content'>
-                    <div class = 'output'></div>
-                </div>
-                <form class = 'input-form' id = 'main-form'>
-                    <div class = 'prompt' id = 'prompt-main'></div>
-                    <input type = 'text' id = 'input-main' class = 'input' name = 'input' autocomplete = 'off' autocorrect = 'off' autocapitalize = 'off' spellcheck = 'false'>
-                </form>
+        <div id = 'main'>
+            <div id = 'buttons_bar'>
+                <button id = 'about_button' class = 'btn_unsel' onClick = 'ChangePage(0)'>about</button>
+                <button id = 'stats_button' class = 'btn_unsel' onClick = 'ChangePage(1)'>stats</button>
+                <button id = 'posts_button' class = 'btn_unsel' onClick = 'ChangePage(2)'>posts</button>
+                <button id = 'bookmarks_button' class = 'btn_unsel' onClick = 'ChangePage(3)'>bookmarks</button>
+                <button id = 'terminal_button' class = 'btn_unsel' onClick = 'ChangePage(4)'>terminal</button>
             </div>
+            <iframe id = 'page'></iframe>
         </div>
     </body>
-    <script type = 'module' src = 'index.js'></script>
+    <script src = 'index.js'></script
 </html>
