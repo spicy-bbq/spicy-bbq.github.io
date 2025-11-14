@@ -25,7 +25,6 @@ function ChangePage(num) {
     }
 
     page.src = 'pages/' + pages[page_num] + '.html'
-    console.log(page_num)
 }
 
 ChangePage(0)
