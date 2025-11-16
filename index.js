@@ -1,11 +1,11 @@
 const about_button = document.querySelector('#about_button')
-const stats_button = document.querySelector('#stats_button')
+const collection_button = document.querySelector('#collection_button')
 const posts_button = document.querySelector('#posts_button')
 const bookmarks_button = document.querySelector('#bookmarks_button')
 const terminal_button = document.querySelector('#terminal_button')
-const buttons = [about_button, stats_button, posts_button, bookmarks_button, terminal_button]
+const buttons = [about_button, collection_button, posts_button, bookmarks_button, terminal_button]
 const page = document.querySelector('#page')
-const pages = ['about', 'stats', 'posts', 'bookmarks', 'terminal']
+const pages = ['about', 'collection', 'posts', 'bookmarks', 'terminal']
 
 var page_num = 0
 
