@@ -57,6 +57,10 @@ body {
     height: 30px;
 }
 
+.btn_unsel:hover {
+    background: var(--orange);
+}
+
 .btn_sel {
     border: 0px solid #000000;
     background: var(--red);
@@ -120,6 +124,10 @@ h1 {
     width: 122.5px;
 }
 
+.card-small:hover {
+    border-color: var(--white);
+}
+
 .card-img-small {
     margin-bottom: 5px;
     border-radius: 10px;
@@ -137,6 +145,10 @@ h1 {
     margin: 8px;
 }
 
+.card:hover {
+    border-color: var(--white);
+}
+
 h2 {
     color: var(--blue);
     font-size: 14px;
@@ -149,4 +161,32 @@ h3 {
     font-size: 14px;
     margin: 0px;
     padding: 0px;
+}
+
+a {
+    font-size: 14px;
+    color: var(--blue);
+    margin: 0px;
+    margin-left: -5px;
+    padding: 5px;
+}
+
+a:hover {
+    background: var(--blue);
+    color: var(--black);
+}
+
+.card-image {
+    height: 50%;
+    max-width: calc(100% - 16px);
+    margin-top: 8px;
+}
+
+ul {
+    list-style-type: square;
+}
+
+li {
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
