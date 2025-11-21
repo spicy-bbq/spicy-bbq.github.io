@@ -2,10 +2,10 @@ const about_button = document.querySelector('#about_button')
 const collection_button = document.querySelector('#collection_button')
 const posts_button = document.querySelector('#posts_button')
 const bookmarks_button = document.querySelector('#bookmarks_button')
-const terminal_button = document.querySelector('#terminal_button')
-const buttons = [about_button, collection_button, posts_button, bookmarks_button, terminal_button]
+const nekoos_button = document.querySelector('#nekoos_button')
+const buttons = [about_button, collection_button, posts_button, bookmarks_button, nekoos_button]
 const page = document.querySelector('#page')
-const pages = ['about', 'collection', 'posts', 'bookmarks', 'terminal']
+const pages = ['about', 'collection', 'posts', 'bookmarks', 'nekoos']
 
 var page_num = 0
 
