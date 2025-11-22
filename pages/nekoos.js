@@ -47,9 +47,12 @@ function SetTime() {
 function OpenApp(app_name) {
     title.innerHTML = app_name
     open_app.innerHTML = app_name
+    app.src = '../apps/' + app_name + '.html'
+    win.style.visibility = 'visible'
+    open_app.style.visibility = 'visible'
 }
 
 ToggleStartMenu()
-OpenApp('Test')
-//CloseWindow()
+//OpenApp('Test')
+CloseWindow()
 setInterval(SetTime(), 5000)
