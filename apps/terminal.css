@@ -1,0 +1,52 @@
+:root {
+    --pink: #f5c2e7;
+    --mauve: #cba6f7;
+    --red: #f38ba8;
+    --orange: #fab387;
+    --yellow: #f9e2af;
+    --blue: #89b4fa;
+    --lavender: #b4befe;
+    --white: #cdd6f4;
+    --gray: #6c7086;
+    --black: #11111b;
+    --green: #a6e3a1;
+}
+
+@font-face {font-family: S; src: url('../assets/Sauce Code Pro Nerd Font Complete.ttf');}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: var(--yellow);
+    color: var(--black);
+    font-family: S;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+input {
+    background: var(--yellow);
+    color: var(--black);
+    font-family: S;
+    font-weight: bold;
+    font-size: 14px;
+    border: 0px;
+    outline: none;
+    width: 95%;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+}
+
+.output {
+    word-wrap: break-word;
+    margin-right: 5px;
+}

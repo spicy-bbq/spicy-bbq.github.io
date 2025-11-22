@@ -21,7 +21,7 @@ function ToggleStartMenu() {
 }
 
 function CloseWindow() {
-    app.src = '_blank'
+    app.src = 'about:blank'
     win.style.visibility = 'hidden'
     open_app.style.visibility = 'hidden'
     title.innerHTML = ''
@@ -50,6 +50,7 @@ function OpenApp(app_name) {
     app.src = '../apps/' + app_name + '.html'
     win.style.visibility = 'visible'
     open_app.style.visibility = 'visible'
+    ToggleStartMenu()
 }
 
 ToggleStartMenu()
