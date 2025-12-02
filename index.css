@@ -1,3 +1,6 @@
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
+@font-face {font-family: S; src: url('assets/Sauce Code Pro Nerd Font Complete.ttf');}
+
 :root {
     --pink: #f5c2e7;
     --mauve: #cba6f7;
@@ -11,8 +14,6 @@
     --black: #11111b;
     --green: #a6e3a1;
 }
-
-@font-face {font-family: S; src: url('assets/Sauce Code Pro Nerd Font Complete.ttf');}
 
 body {
     background: var(--black);
@@ -28,7 +29,7 @@ body {
 }
 
 #main {
-    width: 650px;
+    width: 655px;
     height: calc(100vh - 80px);
     margin-top: 40px;
     margin-bottom: 40px;
@@ -169,6 +170,7 @@ a {
     margin: 0px;
     margin-left: -5px;
     padding: 5px;
+    border-radius: 10px;
 }
 
 a:hover {
@@ -189,4 +191,21 @@ ul {
 li {
     margin-top: 8px;
     margin-bottom: 8px;
+}
+
+.vsplit {
+    display: flex;
+    flex-direction: row;
+    margin-left: 24px;
+    margin-right: 24px;
+    gap: 8px
+}
+
+.a_btn {
+    font-family: S;
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--blue);
+    text-decoration: none;
+    padding: 4px;
 }
