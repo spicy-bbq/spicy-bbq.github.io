@@ -61,6 +61,17 @@ function Background() {
     const H = resolution[1] / 2
     const height = Math.floor(Math.random() * (15 - 6)) + 6
     const blend = Math.floor(Math.random() * (30 - 0))
+    const sun_x = -8
+    const sun_y = -24
+    const sun_size = 14
+    const sun_thickness = 9
+    const sun_inner_thickness = 1.5
+    const sun_ray_size = 2
+    const wave_length = Math.floor(Math.random() * (10 - 5)) + 5
+    const cloud1_y = -18
+    const cloud1_x = -5
+    const cloud1_height = 5
+    const cloud1_width = 10
 
     const colors = {
         pink: '#f5c2e7',
@@ -93,6 +104,12 @@ function Background() {
         for(let x = -W; x < W; x++) {
             
             if(y > 0) {
+                //sea
+                P(x, y, colors.dark_blue)
+                if(Math.abs(x) < W / y * wave_length && y % 2 == 0) {
+                    P(x, y, colors.white)
+                }
+
                 //bg hill
                 if(-x < -H / y * height + blend + y / 2) {
                     P(x, y, colors.dark_green)
@@ -105,9 +122,29 @@ function Background() {
             }
 
             //sun
-            //if(y < -19 && y > -33) {
-            //    P(x, y, colors.yellow)
-            //}
+            if(y < sun_y + sun_size / 2 && y > sun_y - sun_size / 2) {
+                if(x > sun_x - sun_size / 2 && x < sun_x + sun_size / 2) {
+                    if(Math.abs(sun_x - x) <= -Math.abs(sun_y - y) + sun_thickness) {
+                        P(x, y, colors.yellow)
+                    }
+                }
+            }
+
+            if(y + sun_ray_size < sun_y + sun_size / 2 && y - sun_ray_size > sun_y - sun_size / 2) {
+                if(x - sun_ray_size > sun_x - sun_size / 2 && x + sun_ray_size < sun_x + sun_size / 2) {
+                    if(Math.abs(sun_x - x) <= 
+                        -Math.abs(sun_y - y) + sun_thickness - sun_ray_size * sun_inner_thickness) {
+                        P(x, y, colors.orange)
+                    }
+                }
+            }
+
+            //clouds
+            if(Math.abs(cloud1_y - y) < cloud1_height && Math.abs(cloud1_x - x) < cloud1_width) {
+                if(1) {
+                    P(x, y, colors.white)
+                }
+            }
         }
     }
 
