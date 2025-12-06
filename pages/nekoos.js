@@ -53,6 +53,67 @@ function OpenApp(app_name) {
     ToggleStartMenu()
 }
 
+function Background() {
+    const c = background.getContext('2d')
+    const pixel_size = 5
+    const resolution = [background.width / pixel_size, background.height / pixel_size]
+    const W = resolution[0] / 2
+    const H = resolution[1] / 2
+    const height = Math.floor(Math.random() * (15 - 6)) + 6
+    const blend = Math.floor(Math.random() * (30 - 0))
+
+    const colors = {
+        pink: '#f5c2e7',
+        dark_pink: '#ea76cb',
+        purple: '#cba6f7',
+        dark_purple: '#8839ef',
+        red: '#f38ba8',
+        dark_red: '#d20f39',
+        orange: '#fab387',
+        dark_orange: '#fe640b',
+        yellow: '#f9e2af',
+        dark_yellow: '#df8e1d',
+        blue: '#89b4fa',
+        dark_blue: '#1e66f5',
+        lavender: '#b4befe',
+        dark_lavender: '#7287fd',
+        green: '#a6e3a1',
+        dark_green: '#40a02b',
+        white: '#cdd6f4',
+        gray: '#6c7086',
+        black: '#11111b',
+    }
+
+    function P(x, y, color) {
+        c.fillStyle = color
+        c.fillRect((x + W) * pixel_size, (y + H) * pixel_size, pixel_size, pixel_size)
+    }
+    
+    for(let y = -H; y < H; y++) {
+        for(let x = -W; x < W; x++) {
+            
+            if(y > 0) {
+                //bg hill
+                if(-x < -H / y * height + blend + y / 2) {
+                    P(x, y, colors.dark_green)
+                }
+
+                //fg hill
+                if(x < -H / y * height + blend + y / 2) {
+                    P(x, y, colors.green)    
+                }
+            }
+
+            //sun
+            //if(y < -19 && y > -33) {
+            //    P(x, y, colors.yellow)
+            //}
+        }
+    }
+
+}
+
+Background()
 ToggleStartMenu()
 //OpenApp('Test')
 CloseWindow()

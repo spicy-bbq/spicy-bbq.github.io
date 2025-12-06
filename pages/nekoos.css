@@ -26,8 +26,6 @@ body {
 }
 
 #background {
-    width: 100%;
-    height: calc(100% - 30px);
     margin: 0px;
     padding: 0px;
     background: var(--blue);

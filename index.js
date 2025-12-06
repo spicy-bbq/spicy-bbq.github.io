@@ -28,4 +28,4 @@ function ChangePage(num) {
     page.src = 'pages/' + pages[page_num] + '.html'
 }
 
-ChangePage(0)
+ChangePage(5)
