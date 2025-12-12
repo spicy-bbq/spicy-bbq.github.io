@@ -209,3 +209,8 @@ li {
     text-decoration: none;
     padding: 4px;
 }
+
+.post-pic {
+    width: 100%;
+    border-radius: 20px;
+}

@@ -68,10 +68,14 @@ function Background() {
     const sun_inner_thickness = 1.5
     const sun_ray_size = 2
     const wave_length = Math.floor(Math.random() * (10 - 5)) + 5
-    const cloud1_y = -18
-    const cloud1_x = -5
-    const cloud1_height = 5
-    const cloud1_width = 10
+    const cloud1_y = -(Math.floor(Math.random() * (25 - 10)) + 10)
+    const cloud1_x = -(Math.floor(Math.random() * (15)))
+    const cloud1_height = 10
+    const cloud1_width = 14
+    const cloud2_y = -(Math.floor(Math.random() * (25 - 10)) + 10)
+    const cloud2_x = Math.floor(Math.random() * (15))
+    const cloud2_height = 20
+    const cloud2_width = 20
 
     const colors = {
         pink: '#f5c2e7',
@@ -141,7 +145,13 @@ function Background() {
 
             //clouds
             if(Math.abs(cloud1_y - y) < cloud1_height && Math.abs(cloud1_x - x) < cloud1_width) {
-                if(1) {
+                if(Math.abs(cloud1_x - x) <= -Math.abs(cloud1_y - y) * 3 + cloud1_width && cloud1_y - y > 0) {
+                    P(x, y, colors.white)
+                }
+            }
+
+            if(Math.abs(cloud2_y - y) < cloud2_height && Math.abs(cloud2_x - x) < cloud2_width) {
+                if(Math.abs(cloud2_x - x) <= -Math.abs(cloud2_y - y) * 3 + cloud2_width && cloud2_y - y > 0) {
                     P(x, y, colors.white)
                 }
             }
