@@ -50,3 +50,8 @@ input {
     word-wrap: break-word;
     margin-right: 5px;
 }
+
+
+::-webkit-scrollbar {
+    display: none;
+}
