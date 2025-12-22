@@ -1,5 +1,5 @@
 @import "https://www.nerdfonts.com/assets/css/webfont.css";
-@font-face {font-family: S; src:u url('assets/Sauce Code Pro Nerd Font Complete.ttf');}
+@font-face {font-family: S; src: url('assets/Sauce Code Pro Nerd Font Complete.ttf');}
 
 :root {
     --pink: #f5c2e7;
