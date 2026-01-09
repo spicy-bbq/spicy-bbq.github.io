@@ -37,6 +37,7 @@ body {
     box-shadow: var(--gray) 6px 6px 0px;
     display: flex;
     flex-direction: column;
+    background: var(--black);
 }
 
 #buttons_bar {
@@ -92,6 +93,7 @@ body {
     width: calc(100% - 40px);
     margin: 20px;
     margin-bottom: 0px;
+    border-radius: 20px;
 }
 
 p {
@@ -211,6 +213,8 @@ li {
     color: var(--blue);
     text-decoration: none;
     padding: 4px;
+    margin-top: -10px;
+    margin-bottom: -10px;
 }
 
 .post-pic {
@@ -230,4 +234,18 @@ li {
     flex-wrap: wrap;
     gap: 5px;
     margin: 6px
+}
+
+.small {
+    width: 50%
+}
+
+#background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: -1;
+    filter: hue-rotate(60deg);
 }

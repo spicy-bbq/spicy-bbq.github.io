@@ -6,6 +6,35 @@ const open_app = document.querySelector('#open_app')
 const clock = document.querySelector('#clock')
 const start_menu = document.querySelector('#start_menu')
 
+const colors = {
+    pink: '#f5c2e7',
+    dark_pink: '#ea76cb',
+    purple: '#cba6f7',
+    dark_purple: '#8839ef',
+    red: '#f38ba8',
+    dark_red: '#d20f39',
+    orange: '#fab387',
+    dark_orange: '#fe640b',
+    yellow: '#f9e2af',
+    dark_yellow: '#df8e1d',
+    blue: '#89b4fa',
+    dark_blue: '#1e66f5',
+    lavender: '#b4befe',
+    dark_lavender: '#7287fd',
+    green: '#a6e3a1',
+    dark_green: '#40a02b',
+    white: '#cdd6f4',
+    gray: '#6c7086',
+    black: '#11111b',
+}
+
+const c = background.getContext('2d')
+const pixel_size = 5
+const resolution = [background.width / pixel_size, background.height / pixel_size]
+const W = resolution[0] / 2
+const H = resolution[1] / 2
+ 
+
 let start_menu_visible = 1
 
 function ToggleStartMenu() {
@@ -53,13 +82,13 @@ function OpenApp(app_name) {
     ToggleStartMenu()
 }
 
+function P(x, y, color) {
+    c.fillStyle = color
+    c.fillRect((x + W) * pixel_size, (y + H) * pixel_size, pixel_size, pixel_size)
+}
+
 function Background() {
-    const c = background.getContext('2d')
-    const pixel_size = 5
-    const resolution = [background.width / pixel_size, background.height / pixel_size]
-    const W = resolution[0] / 2
-    const H = resolution[1] / 2
-    const height = Math.floor(Math.random() * (15 - 6)) + 6
+   const height = Math.floor(Math.random() * (15 - 6)) + 6
     const blend = Math.floor(Math.random() * (30 - 0))
     const sun_x = -8
     const sun_y = -24
@@ -76,33 +105,6 @@ function Background() {
     const cloud2_x = Math.floor(Math.random() * (15))
     const cloud2_height = 20
     const cloud2_width = 20
-
-    const colors = {
-        pink: '#f5c2e7',
-        dark_pink: '#ea76cb',
-        purple: '#cba6f7',
-        dark_purple: '#8839ef',
-        red: '#f38ba8',
-        dark_red: '#d20f39',
-        orange: '#fab387',
-        dark_orange: '#fe640b',
-        yellow: '#f9e2af',
-        dark_yellow: '#df8e1d',
-        blue: '#89b4fa',
-        dark_blue: '#1e66f5',
-        lavender: '#b4befe',
-        dark_lavender: '#7287fd',
-        green: '#a6e3a1',
-        dark_green: '#40a02b',
-        white: '#cdd6f4',
-        gray: '#6c7086',
-        black: '#11111b',
-    }
-
-    function P(x, y, color) {
-        c.fillStyle = color
-        c.fillRect((x + W) * pixel_size, (y + H) * pixel_size, pixel_size, pixel_size)
-    }
     
     for(let y = -H; y < H; y++) {
         for(let x = -W; x < W; x++) {
@@ -160,7 +162,28 @@ function Background() {
 
 }
 
-Background()
+function BackgroundNight() {
+    for(let y = -H; y < H; y++) {
+        for(let x = -W; x < W; x++) {
+            //sky and water
+            if(y < 5) P(x, y, colors.black)
+            else P(x, y, colors.dark_blue)
+
+            //stars
+            if(y < 0 && (y / x) % 2 == 0) P(x, y, colors.white)
+
+            //moon
+            if(y < 5 && Math.abs(x) < 6 && (y) * 3 > Math.abs(x) / 0.8) P(x, y, colors.white)
+
+            //moon reflection
+            if(y > 5 && y < 12 && Math.abs(x) < 7 && y % 2 == 0) {
+                if(y - 14 < -Math.abs(x)) P(x, y, colors.white)
+            }
+        }
+    }
+}
+
+BackgroundNight()
 ToggleStartMenu()
 //OpenApp('Test')
 CloseWindow()
