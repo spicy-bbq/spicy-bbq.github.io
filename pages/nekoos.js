@@ -170,7 +170,10 @@ function BackgroundNight() {
             else P(x, y, colors.dark_blue)
 
             //stars
-            if(y < 0 && (y / x) % 2 == 0) P(x, y, colors.white)
+            if((y % 12 == 0 && x % 11 == 0) || (y % 9 == 0 && x % 13 == 0)) {
+                if(y < 0 && y > -H) P(x, y, colors.white)
+            }
+            if((y == -1 || y == -H + 2) && x % 9 == 0) P(x, y, colors.white)
 
             //moon
             if(y < 5 && Math.abs(x) < 6 && (y) * 3 > Math.abs(x) / 0.8) P(x, y, colors.white)
@@ -179,6 +182,13 @@ function BackgroundNight() {
             if(y > 5 && y < 12 && Math.abs(x) < 7 && y % 2 == 0) {
                 if(y - 14 < -Math.abs(x)) P(x, y, colors.white)
             }
+
+            //beach
+            if(y > 28) P(x, y, colors.dark_orange)
+
+            //waves
+            if(y <= 28 && y > 20 && y % 2 == 0 && Math.abs(x) < y * 3 - 50) P(x, y, colors.white)
+            if(y == 15 && Math.abs(x) < W - 5) P(x, y, colors.white)
         }
     }
 }

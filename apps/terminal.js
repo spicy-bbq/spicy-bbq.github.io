@@ -24,6 +24,9 @@ function ProcessInput() {
         case 'copypasta':
             Copypasta()
             break
+        case 'nekofetch':
+            Nekofetch()
+            break
         default:
             let c = '<div class = "output">Command not found. '
             c += 'Type "help" to show available commands</div>'
@@ -55,6 +58,7 @@ function Help() {
     const help = [
         'Available commands:',
         'copypasta - random post from r/copypasta',
+        'nekofetch - author\'s stats'
     ]
 
     let c = '<div class = "output">'
@@ -65,5 +69,39 @@ function Help() {
     }
 
     c += '</div>'
+    content.innerHTML += c
+}
+
+function Nekofetch() {
+    const fetch = [
+        'class Shitten {',
+        '   constructor(): void {',
+        '        this.name: string = "Shitten"',
+        '        this.level: number = 24',
+        '        this.gender: string = "husbando"',
+        '        this.mf: any = idiot',
+        '   }',
+        '',
+        '   Life(): any {',
+        '       this.life: void = null',
+        '       this.difficulty: string = "hardcore"',
+        '       return End(this.life)',
+        '   {',
+        '',
+        '   Tech(): void {',
+        '       this.os: string = Arch["btw"]',
+        '       this.langs: string[] = ["bash", "python", "html", "css"]',
+        '       this.langs.push("gdscript", "lua", "js", "ts")',
+        '   }',
+        '}',
+    ]
+
+    let c = '<div class = "output"><pre>'
+
+    fetch.forEach(l => {
+        c += l + '<br>'
+    })
+
+    c += '</pre></div>'
     content.innerHTML += c
 }

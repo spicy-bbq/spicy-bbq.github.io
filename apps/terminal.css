@@ -55,3 +55,17 @@ input {
 ::-webkit-scrollbar {
     display: none;
 }
+
+.vsplit {
+    display: flex;
+    flex-direction: row;
+}
+
+pre {
+    color: var(--black);
+    font-family: S;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+}
