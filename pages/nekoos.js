@@ -34,8 +34,34 @@ const resolution = [background.width / pixel_size, background.height / pixel_siz
 const W = resolution[0] / 2
 const H = resolution[1] / 2
  
-
 let start_menu_visible = 1
+
+nekoblush.style.left = '200px'
+nekoblush.style.bottom = '30px'
+marona1.style.left = '50px'
+marona1.style.bottom = '60px'
+marona2.style.left = '550px'
+marona2.style.bottom = '40px'
+madokarun.style.left = '100px'
+madokarun.style.bottom = '100px'
+vanilla1.style.left = '20px'
+vanilla1.style.bottom = '200px'
+vanilla2.style.right = '30px'
+vanilla2.style.top = '10px'
+sit1.style.right = '20px'
+sit1.style.bottom = '170px'
+whitch1.style.left = '200px'
+whitch1.style.bottom = '150px'
+schoolgirl1.style.right = '160px'
+schoolgirl1.style.bottom = '220px'
+sit2.style.left = '100px'
+sit2.style.top = '255px'
+whitch2.style.right = '150px'
+whitch2.style.top = '150px'
+schoolgirl2.style.left = '200px'
+schoolgirl2.style.top = '20px'
+chocola.style.left = '50px'
+chocola.style.top = '50px'
 
 function ToggleStartMenu() {
     start_menu_visible *= -1

@@ -171,3 +171,13 @@ div {
 #pfp {
     width: 70px;
 }
+
+.sticker {
+    position: absolute;
+    max-height: 100px;
+}
+
+.sticker-big {
+    position: absolute;
+    max-height: 200px;
+}
