@@ -1,67 +1,15 @@
-const background = document.querySelector('#background')
 const win = document.querySelector('#window')
 const title = document.querySelector('#title')
 const app = document.querySelector('#app')
 const open_app = document.querySelector('#open_app')
 const clock = document.querySelector('#clock')
 const start_menu = document.querySelector('#start_menu')
-
-const colors = {
-    pink: '#f5c2e7',
-    dark_pink: '#ea76cb',
-    purple: '#cba6f7',
-    dark_purple: '#8839ef',
-    red: '#f38ba8',
-    dark_red: '#d20f39',
-    orange: '#fab387',
-    dark_orange: '#fe640b',
-    yellow: '#f9e2af',
-    dark_yellow: '#df8e1d',
-    blue: '#89b4fa',
-    dark_blue: '#1e66f5',
-    lavender: '#b4befe',
-    dark_lavender: '#7287fd',
-    green: '#a6e3a1',
-    dark_green: '#40a02b',
-    white: '#cdd6f4',
-    gray: '#6c7086',
-    black: '#11111b',
-}
-
-const c = background.getContext('2d')
-const pixel_size = 5
-const resolution = [background.width / pixel_size, background.height / pixel_size]
-const W = resolution[0] / 2
-const H = resolution[1] / 2
- 
 let start_menu_visible = 1
 
-nekoblush.style.left = '200px'
-nekoblush.style.bottom = '30px'
-marona1.style.left = '50px'
-marona1.style.bottom = '60px'
-marona2.style.left = '550px'
-marona2.style.bottom = '40px'
-madokarun.style.left = '100px'
-madokarun.style.bottom = '100px'
-vanilla1.style.left = '20px'
-vanilla1.style.bottom = '200px'
-vanilla2.style.right = '30px'
-vanilla2.style.top = '10px'
-sit1.style.right = '20px'
-sit1.style.bottom = '170px'
-whitch1.style.left = '200px'
-whitch1.style.bottom = '150px'
-schoolgirl1.style.right = '160px'
-schoolgirl1.style.bottom = '220px'
-sit2.style.left = '100px'
-sit2.style.top = '255px'
-whitch2.style.right = '150px'
-whitch2.style.top = '150px'
-schoolgirl2.style.left = '200px'
-schoolgirl2.style.top = '20px'
-chocola.style.left = '50px'
-chocola.style.top = '50px'
+marona.style.left = '50px'
+marona.style.bottom = '60px'
+whitch.style.right = '30px'
+whitch.style.bottom = '50px'
 
 function ToggleStartMenu() {
     start_menu_visible *= -1
@@ -108,118 +56,6 @@ function OpenApp(app_name) {
     ToggleStartMenu()
 }
 
-function P(x, y, color) {
-    c.fillStyle = color
-    c.fillRect((x + W) * pixel_size, (y + H) * pixel_size, pixel_size, pixel_size)
-}
-
-function Background() {
-   const height = Math.floor(Math.random() * (15 - 6)) + 6
-    const blend = Math.floor(Math.random() * (30 - 0))
-    const sun_x = -8
-    const sun_y = -24
-    const sun_size = 14
-    const sun_thickness = 9
-    const sun_inner_thickness = 1.5
-    const sun_ray_size = 2
-    const wave_length = Math.floor(Math.random() * (10 - 5)) + 5
-    const cloud1_y = -(Math.floor(Math.random() * (25 - 10)) + 10)
-    const cloud1_x = -(Math.floor(Math.random() * (15)))
-    const cloud1_height = 10
-    const cloud1_width = 14
-    const cloud2_y = -(Math.floor(Math.random() * (25 - 10)) + 10)
-    const cloud2_x = Math.floor(Math.random() * (15))
-    const cloud2_height = 20
-    const cloud2_width = 20
-    
-    for(let y = -H; y < H; y++) {
-        for(let x = -W; x < W; x++) {
-            
-            if(y > 0) {
-                //sea
-                P(x, y, colors.dark_blue)
-                if(Math.abs(x) < W / y * wave_length && y % 2 == 0) {
-                    P(x, y, colors.white)
-                }
-
-                //bg hill
-                if(-x < -H / y * height + blend + y / 2) {
-                    P(x, y, colors.dark_green)
-                }
-
-                //fg hill
-                if(x < -H / y * height + blend + y / 2) {
-                    P(x, y, colors.green)    
-                }
-            }
-
-            //sun
-            if(y < sun_y + sun_size / 2 && y > sun_y - sun_size / 2) {
-                if(x > sun_x - sun_size / 2 && x < sun_x + sun_size / 2) {
-                    if(Math.abs(sun_x - x) <= -Math.abs(sun_y - y) + sun_thickness) {
-                        P(x, y, colors.yellow)
-                    }
-                }
-            }
-
-            if(y + sun_ray_size < sun_y + sun_size / 2 && y - sun_ray_size > sun_y - sun_size / 2) {
-                if(x - sun_ray_size > sun_x - sun_size / 2 && x + sun_ray_size < sun_x + sun_size / 2) {
-                    if(Math.abs(sun_x - x) <= 
-                        -Math.abs(sun_y - y) + sun_thickness - sun_ray_size * sun_inner_thickness) {
-                        P(x, y, colors.orange)
-                    }
-                }
-            }
-
-            //clouds
-            if(Math.abs(cloud1_y - y) < cloud1_height && Math.abs(cloud1_x - x) < cloud1_width) {
-                if(Math.abs(cloud1_x - x) <= -Math.abs(cloud1_y - y) * 3 + cloud1_width && cloud1_y - y > 0) {
-                    P(x, y, colors.white)
-                }
-            }
-
-            if(Math.abs(cloud2_y - y) < cloud2_height && Math.abs(cloud2_x - x) < cloud2_width) {
-                if(Math.abs(cloud2_x - x) <= -Math.abs(cloud2_y - y) * 3 + cloud2_width && cloud2_y - y > 0) {
-                    P(x, y, colors.white)
-                }
-            }
-        }
-    }
-
-}
-
-function BackgroundNight() {
-    for(let y = -H; y < H; y++) {
-        for(let x = -W; x < W; x++) {
-            //sky and water
-            if(y < 5) P(x, y, colors.black)
-            else P(x, y, colors.dark_blue)
-
-            //stars
-            if((y % 12 == 0 && x % 11 == 0) || (y % 9 == 0 && x % 13 == 0)) {
-                if(y < 0 && y > -H) P(x, y, colors.white)
-            }
-            if((y == -1 || y == -H + 2) && x % 9 == 0) P(x, y, colors.white)
-
-            //moon
-            if(y < 5 && Math.abs(x) < 6 && (y) * 3 > Math.abs(x) / 0.8) P(x, y, colors.white)
-
-            //moon reflection
-            if(y > 5 && y < 12 && Math.abs(x) < 7 && y % 2 == 0) {
-                if(y - 14 < -Math.abs(x)) P(x, y, colors.white)
-            }
-
-            //beach
-            if(y > 28) P(x, y, colors.dark_orange)
-
-            //waves
-            if(y <= 28 && y > 20 && y % 2 == 0 && Math.abs(x) < y * 3 - 50) P(x, y, colors.white)
-            if(y == 15 && Math.abs(x) < W - 5) P(x, y, colors.white)
-        }
-    }
-}
-
-BackgroundNight()
 ToggleStartMenu()
 //OpenApp('Test')
 CloseWindow()

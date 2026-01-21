@@ -26,13 +26,14 @@ body {
     font-family: S;
     font-size: 14px;
     font-weight: bold;
+    cursor: url('assets/cursor.gif'), auto !important;
 }
 
 #main {
-    width: 655px;
-    height: 849px;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    width: 760px;
+    height: calc(100% - 40px);
+    margin-top: 20px;
+    margin-bottom: 20px;
     border: 4px solid var(--lavender);
     box-shadow: var(--gray) 6px 6px 0px;
     display: flex;
@@ -67,12 +68,12 @@ body {
 .btn_sel {
     border: 0px solid #000000;
     background: var(--red);
-    foreground: var(--black);
+    color: var(--black);
     font-family: S;
     font-weight: bold;
     font-size: 14px;
     flex: 1;
-    height: 30px%;
+    height: 30px;
     user-select: none;
 }
 
@@ -93,6 +94,7 @@ body {
     width: calc(100% - 40px);
     margin: 20px;
     margin-bottom: 0px;
+    margin-top: 0px;
     border-radius: 20px;
 }
 
@@ -117,7 +119,7 @@ h1 {
     flex-wrap: wrap;
     margin: 8px;
     margin-left: 10px;
-    gap: 8px;
+    gap: 10px;
 }
 
 .card-small {
@@ -127,7 +129,7 @@ h1 {
     border: 4px solid var(--gray);
     border-radius: 20px;
     padding: 8px;
-    width: 122.5px;
+    width: 147.5px;
 }
 
 .card-small:hover {
@@ -137,7 +139,7 @@ h1 {
 .card-img-small {
     margin-bottom: 5px;
     border-radius: 10px;
-    height: 180px;
+    height: 220px;
 }
 
 ::-webkit-scrollbar {
@@ -248,4 +250,46 @@ li {
     min-height: 100vh;
     z-index: -1;
     filter: hue-rotate(60deg);
+}
+
+.moji {
+    height: 40px;
+    margin-top: -8px;
+}
+
+#bgm {
+    visibility: hidden;
+    position: absolute;
+}
+
+#intro {
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+}
+
+#enter {
+    position: absolute;
+    font-family: S;
+    font-weight: bold;
+    font-size: 20px;
+    border: 4px solid var(--black);
+    border-radius: 20px;
+    color: var(--black);
+    background: var(--red);
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#enter:hover {
+    background: var(--blue);
+    text-shadow:
+        5px 5px 2px var(--black),
+        -5px -5px 2px var(--black);
+    box-shadow: inset 0 0 20px 5px var(--black);
+}
+
+* {
+    cursor: url('assets/cursor.gif'), auto !important;
 }

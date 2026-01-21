@@ -29,3 +29,10 @@ function ChangePage(num) {
 }
 
 ChangePage(0)
+
+function Enter() {
+    intro.style.display = 'none'
+    enter.style.display = 'none'
+    bgm.play()
+}
+

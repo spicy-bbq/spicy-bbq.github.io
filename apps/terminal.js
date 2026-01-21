@@ -35,7 +35,7 @@ function ProcessInput() {
     }
 
     form.reset()
-    form.scrollIntoView({behavior: 'instant'})
+    //form.scrollIntoView({behavior: 'instant'})
 }
 
 function Copypasta() {

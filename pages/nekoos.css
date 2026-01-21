@@ -23,12 +23,17 @@ body {
     font-size: 14px;
     font-weight: bold;
     color: var(--black);
+    overflow: hidden;
+    cursor: url('../assets/cursor.gif'), auto;
 }
 
 #background {
     margin: 0px;
     padding: 0px;
-    background: var(--blue);
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    bottom: 100vh;
 }
 
 #taskbar {
@@ -37,6 +42,8 @@ body {
     background: var(--orange);
     display: flex;
     flex-direction: row;
+    position: absolute;
+    bottom: 0px;
 }
 
 #start_button {
@@ -180,4 +187,8 @@ div {
 .sticker-big {
     position: absolute;
     max-height: 200px;
+}
+
+* {
+    cursor: url('../assets/cursor.gif'), auto;
 }
