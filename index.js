@@ -1,12 +1,6 @@
-const about_button = document.querySelector('#about_button')
-const collection_button = document.querySelector('#collection_button')
-const stamps_button = document.querySelector('#stamps_button')
-const posts_button = document.querySelector('#posts_button')
-const bookmarks_button = document.querySelector('#bookmarks_button')
-const nekoos_button = document.querySelector('#nekoos_button')
-const buttons = [about_button, collection_button, stamps_button, posts_button, bookmarks_button, nekoos_button]
+const buttons = [about_button, collection_button, stamps_button, posts_button, bookmarks_button, chat_button, nekoos_button]
 const page = document.querySelector('#page')
-const pages = ['about', 'collection', 'stamps', 'posts', 'bookmarks', 'nekoos']
+const pages = ['about', 'collection', 'stamps', 'posts', 'bookmarks', 'chat', 'nekoos']
 
 var page_num = 0
 
