@@ -6,17 +6,24 @@
     </head>
     <body>
         <img id = 'background-image' src = 'assets/water.jpg'>
+        <div id = 'buttons_bar'>
+            <button id = 'about_button' class = 'btn_unsel' onClick = 'ChangePage(0)'>about</button>
+            <button id = 'collection_button' class = 'btn_unsel' onClick = 'ChangePage(1)'>collection</button>
+            <button id = 'stamps_button' class = 'btn_unsel' onClick = 'ChangePage(2)'>stamps</button>
+            <button id = 'posts_button' class = 'btn_unsel' onClick = 'ChangePage(3)'>posts</button>
+            <button id = 'bookmarks_button' class = 'btn_unsel' onClick = 'ChangePage(4)'>bookmarks</button>
+            <button id = 'chat_button' class = 'btn_unsel' onClick = 'ChangePage(5)'>chat</button>
+            <button id = 'nekoos_button' class = 'btn_unsel' onClick = 'ChangePage(6)'>neko_os</button>
+        </div>
         <div id = 'main'>
-            <div id = 'buttons_bar'>
-                <button id = 'about_button' class = 'btn_unsel' onClick = 'ChangePage(0)'>about</button>
-                <button id = 'collection_button' class = 'btn_unsel' onClick = 'ChangePage(1)'>collection</button>
-                <button id = 'stamps_button' class = 'btn_unsel' onClick = 'ChangePage(2)'>stamps</button>
-                <button id = 'posts_button' class = 'btn_unsel' onClick = 'ChangePage(3)'>posts</button>
-                <button id = 'bookmarks_button' class = 'btn_unsel' onClick = 'ChangePage(4)'>bookmarks</button>
-                <button id = 'chat_button' class = 'btn_unsel' onClick = 'ChangePage(5)'>chat</button>
-                <button id = 'nekoos_button' class = 'btn_unsel' onClick = 'ChangePage(6)'>neko_os</button>
-            </div>
             <iframe id = 'page'></iframe>
+        </div>
+        <div id = 'other_bar'>
+            <img src = 'assets/purple-flow.gif' height = '40px'>
+            <img src = 'assets/banger.gif' height = '40px'>
+            <img src = 'assets/jellyfish.gif' height = '40px'>
+            <img src = 'assets/moon.gif' height = '40px'>
+            <img src = 'assets/purple.gif' height = '40px'>
         </div>
         <audio id = 'bgm' loop>
             <source src = 'assets/bgm/dead inside.mp3' type = 'audio/mpeg'>
